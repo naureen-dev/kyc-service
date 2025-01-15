@@ -62,6 +62,7 @@ To run the project in development mode, use the following command:
 
 ```bash
 npm run start:dev
+ ```
 
 The server will be available at http://localhost:3000.
 
@@ -69,8 +70,10 @@ Production Mode
 
 For production, you can build the project and run it:
 
+```bash
 npm run build
 npm run start
+ ```
 
 The server will be available at http://localhost:3000.
 
