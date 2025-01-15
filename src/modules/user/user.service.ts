@@ -28,7 +28,7 @@ export class UserService {
     }
   }
 
-  // Get a list of all KYC records for a specific user
+  // Get a list of all KYC records for a specific user 
   async getKycByUser(userId: string) {
     try {
       console.log(userId)
