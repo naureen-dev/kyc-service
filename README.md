@@ -90,26 +90,25 @@ Postman Collection
 https://drive.google.com/file/d/1P75gIfVhWbmwwunrD2ir4oPp2OW4RoHN/view?usp=drive_link
 
 You can import the provided Postman collection to test the API:
-	1.	Download the Postman collection JSON file.
-	2.	Open Postman and click on “Import”.
-	3.	Choose the downloaded file to add the collection to Postman.
+	- Download the Postman collection JSON file.
+	- Open Postman and click on “Import”.
+	- Choose the downloaded file to add the collection to Postman.
 
 Database Setup
-	1.	Ensure PostgreSQL is installed and running on your machine or a remote server.
-	2.	Use the .env configuration for the database connection.
-	3.	The project will automatically attempt to connect to the database on startup and synchronize the schema.
+	- Ensure PostgreSQL is installed and running on your machine or a remote server.
+	- Use the .env configuration for the database connection.
+	- The project will automatically attempt to connect to the database on startup and synchronize the schema.
 
 Authentication
 
 The API uses JWT for authentication. To obtain a token:
-	1.	Make a POST request to http://localhost:3000/auth/login with the necessary credentials (username and password).
-	2.	Use the JWT token returned in the response for subsequent requests that require authentication. Include it in the Authorization header as a Bearer token.
+	- Make a POST request to http://localhost:3000/auth/login with the necessary credentials (username and password).
+	- Use the JWT token returned in the response for subsequent requests that require authentication. Include it in the Authorization header as a Bearer token.
 
 Useful Commands
-	•	npm run start:dev: Start the project in development mode with live-reloading.
-	•	npm run build: Build the project for production.
-	•	npm run start: Start the project in production mode.
-	•	npm run test: Run tests.
+	- npm run start:dev: Start the project in development mode with live-reloading.
+	- npm run build: Build the project for production.
+	- npm run start: Start the project in production mode.
 
 Troubleshooting
 
