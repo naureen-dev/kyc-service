@@ -1,5 +1,3 @@
-Here’s the properly formatted README.md file with proper markdown syntax:
-
 # KYC Service Project
 
 This is a NestJS project with PostgreSQL database integration. The project includes authentication using JWT, role-based access control, KYC management, and reporting.
@@ -113,5 +111,3 @@ Useful Commands
 Troubleshooting
 
 If you encounter issues with the database connection, ensure that the PostgreSQL service is running and the credentials in the .env file are correct. You can also check the NestJS logs for error details.
-
-This should display cleanly in any Markdown viewer, such as GitHub, and be easy to follow for setting up and running the project.
