@@ -84,7 +84,7 @@ This will display all the available API endpoints with detailed information on e
 
 Postman Collection
 
-Postman Collection Link
+https://drive.google.com/file/d/1P75gIfVhWbmwwunrD2ir4oPp2OW4RoHN/view?usp=drive_link
 
 You can import the provided Postman collection to test the API:
 	1.	Download the Postman collection JSON file.
