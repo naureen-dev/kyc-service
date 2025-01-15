@@ -1,73 +1,103 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+KYC Service Project
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This is a NestJS project with a PostgreSQL database integration. The project includes authentication using JWT, role based access control, KYC management and reporting.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Prerequisites
 
-## Description
+Before you begin, ensure you have the following installed:
+	•	Node.js (LTS version recommended)
+	•	PostgreSQL running locally or on a remote server
+	•	NestJS CLI (optional, can be used for development)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Environment Variables
 
-## Installation
+Make sure to create a .env file in the root directory of the project with the following environment variables:
 
-```bash
-$ npm install
-```
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=password
+DB_DATABASE=kycservicedb
 
-## Running the app
+JWT_SECRET=myjwtsecret123
+JWT_EXPIRES=1d
 
-```bash
-# development
-$ npm run start
+	•	DB_HOST: The hostname or IP address of your PostgreSQL database.
+	•	DB_PORT: The port your PostgreSQL is running on (default is 5432).
+	•	DB_USERNAME: Username for your PostgreSQL database.
+	•	DB_PASSWORD: Password for your PostgreSQL database.
+	•	DB_DATABASE: The name of your database.
+	•	JWT_SECRET: A secret key for signing JSON Web Tokens.
+	•	JWT_EXPIRES: Token expiration time (e.g., 1d).
 
-# watch mode
-$ npm run start:dev
+Installation
+	1.	Clone the repository to your local machine.
 
-# production mode
-$ npm run start:prod
-```
+git clone https://github.com/your-username/your-repository-name.git
+cd your-repository-name
 
-## Test
 
-```bash
-# unit tests
-$ npm run test
+	2.	Install the dependencies using npm or yarn:
 
-# e2e tests
-$ npm run test:e2e
+npm install
 
-# test coverage
-$ npm run test:cov
-```
+or
 
-## Support
+yarn install
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+	3.	Create and set up the PostgreSQL database as per the values in your .env file.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Running the Application
+	1.	Development Mode
+To run the project in development mode, use the following command:
 
-## License
+npm run start:dev
 
-Nest is [MIT licensed](LICENSE).
+The server will be available at http://localhost:3000.
+
+	2.	Production Mode
+For production, you can build the project and run it:
+
+npm run build
+npm run start
+
+The server will be available at http://localhost:3000.
+
+API Documentation
+
+Once the server is running, you can access the Swagger documentation at:
+
+http://localhost:3000/api/swagger
+
+This will display all the available API endpoints with detailed information on each.
+
+Postman Collection
+
+https://drive.google.com/file/d/1P75gIfVhWbmwwunrD2ir4oPp2OW4RoHN/view?usp=sharing
+
+You can import the provided Postman collection to test the API:
+	1.	Download the Postman collection JSON file.
+	2.	Open Postman and click on “Import”.
+	3.	Choose the downloaded file to add the collection to Postman.
+
+Database Setup
+	1.	Ensure PostgreSQL is installed and running on your machine or a remote server.
+	2.	Use the .env configuration for the database connection.
+	3.	The project will automatically attempt to connect to the database on startup and synchronize the schema.
+
+Authentication
+
+The API uses JWT for authentication. To obtain a token:
+	1.	Make a POST request to http://localhost:3000/auth/login with the necessary credentials (username and password).
+	2.	Use the JWT token returned in the response for subsequent requests that require authentication. Include it in the Authorization header as a Bearer token.
+
+Useful Commands
+	•	npm run start:dev: Start the project in development mode with live-reloading.
+	•	npm run build: Build the project for production.
+	•	npm run start: Start the project in production mode.
+	•	npm run test: Run tests.
+
+Troubleshooting
+
+If you encounter issues with the database connection, ensure that the PostgreSQL service is running and the credentials in the .env file are correct. You can also check the NestJS logs for error details.
